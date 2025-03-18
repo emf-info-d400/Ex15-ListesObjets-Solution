@@ -40,15 +40,17 @@ public class ListePersonne_Dynamique {
         boolean reussi = false;
 
         if (p != null) {
+            int nouvelleTaille = personnes.length;
             for (int i = 0; i < personnes.length; i++) {
                 if (personnes[i] == p) {
                     personnes[i] = null;
+                    nouvelleTaille--;
                     reussi = true;
                     break;
                 }
             }
             if (reussi) {
-                Personne[] personnesNouveau = new Personne[personnes.length - 1];
+                Personne[] personnesNouveau = new Personne[nouvelleTaille];
                 int pos = 0;
                 for (int i = 0; i < personnes.length; i++) {
                     if (personnes[i] != null) {
